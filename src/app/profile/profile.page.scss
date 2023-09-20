@@ -1,0 +1,12 @@
+.user-profile {
+    font-size: 7rem;
+}
+
+#upload-img {
+    padding-top: 40px;
+    padding-right: 40px;
+}
+
+#profileImg::part(image) {
+    border-radius: 50% !important;
+}

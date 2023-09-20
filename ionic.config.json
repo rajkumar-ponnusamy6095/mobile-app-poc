@@ -1,0 +1,7 @@
+{
+  "name": "mitre-10-trade",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

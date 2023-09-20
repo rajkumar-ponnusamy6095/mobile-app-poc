@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-img src="../../assets/images/mitre-10.jpg" alt="Image of Mitre 10"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col col-6>
+      <!-- <ion-icon name="person-circle-outline" class="user-profile"></ion-icon> -->
+      <ion-img [src]="profileImg" alt="Image of Mitre 10" id="profileImg"></ion-img>
+    </ion-col>
+    <ion-col col-6 id="upload-img">
+      <ion-button type="button" color="primary" expand="block" (click)="takePicture()">Upload Photo</ion-button>
+    </ion-col>
+  </ion-row>
+
+  <form class="profile-form">
+    <ion-item lines="full">
+      <ion-label position="stacked">First Name</ion-label>
+      <ion-input type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="stacked">Last name</ion-label>
+      <ion-input type="password" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-select label="Floating label" label-placement="floating">
+        <ion-select-option value="0">Apple</ion-select-option>
+        <ion-select-option value="1">Samsung</ion-select-option>
+        <ion-select-option value="2">TCS</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Proceed</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

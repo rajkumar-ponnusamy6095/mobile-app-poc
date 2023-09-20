@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-img
+  src="../../assets/images/mitre-10.jpg"
+  alt="Image of Mitre 10"
+></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form class="login-form" (ngSubmit)="login()" [formGroup]="loginForm" novalidate>
+    <ion-item lines="full">
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input type="text" required formControlName="userName"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input type="password" required formControlName="password"></ion-input>
+    </ion-item>
+    <br>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Login</ion-button>
+        <br>
+        <a [routerLink]="['/forgot-password']" class="forgot-password">Forgot Password?</a>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
