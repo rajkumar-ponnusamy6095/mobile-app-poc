@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
@@ -10,11 +11,13 @@ export class ProfilePage implements OnInit {
 cameraOptions = {
   quality: 90,
   allowEditing: true,
-  resultType: CameraResultType.Uri
+  resultType: CameraResultType.Base64
 };
 profileImg: any = '../../assets/images/user.svg';
 
-  constructor() { }
+  constructor(
+    public dms: DomSanitizer
+  ) { }
 
   ngOnInit() {
   }
@@ -22,9 +25,10 @@ profileImg: any = '../../assets/images/user.svg';
   async takePicture() {
     const image = await Camera.getPhoto(this.cameraOptions);
     console.log('image: ',image)
-    var imageUrl = image.webPath;
-    console.log('imageUrl: ',imageUrl)
-    this.profileImg = imageUrl;
+    var imageUrl = image.base64String;
+    console.log('imageUrl: ',imageUrl);
+    this.profileImg = 'data:image/jpeg;base64,' + imageUrl;
+    console.log('this.profileImg: ',this.profileImg);
   }
 
 }

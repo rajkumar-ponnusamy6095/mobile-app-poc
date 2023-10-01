@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-img src="../../assets/images/mitre-10.jpg" alt="Image of Mitre 10"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-icon name="person-circle">
+        </ion-icon>
+      </ion-buttons>
+      <ion-title>Hello, John</ion-title>
+    </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-searchbar placeholder="Search for Products"></ion-searchbar>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card *ngFor="let item of tradeHubList">
+    <!-- <img [src]="displayImage(item.banner)"/> -->
+    <img class="product-img" src="../../assets/images/product-img.jpg"/>
+  </ion-card>
+  
+
+
+</ion-content>
